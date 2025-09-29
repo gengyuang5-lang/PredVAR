@@ -1,9 +1,32 @@
+# -*- coding: utf-8 -*-
+import sys
+import io
+import os
+# 设置标准输出和标准错误输出为UTF-8编码
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+# 在Windows PowerShell环境中尝试设置控制台编码
+if os.name == 'nt':
+    try:
+        import ctypes
+        # 设置Windows控制台为UTF-8编码
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleOutputCP(65001)  # UTF-8
+        kernel32.SetConsoleCP(65001)  # UTF-8
+    except:
+        pass
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.linalg import eig, svd, inv, pinv
 from sklearn.preprocessing import StandardScaler
 import warnings
 warnings.filterwarnings('ignore')
+
+# 设置Matplotlib支持中文显示
+plt.rcParams["font.family"] = ["SimHei", "WenQuanYi Micro Hei", "Heiti TC"]
+plt.rcParams["axes.unicode_minus"] = False  # 解决负号显示问题
 
 class PredVAR:
     """

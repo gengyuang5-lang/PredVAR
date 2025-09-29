@@ -1,0 +1,25 @@
+{
+  "model_parameters": {
+    "l": 2,
+    "s": 8,
+    "max_iter": 50,
+    "tol": 1e-06,
+    "sample_rate": 10
+  },
+  "performance_metrics": {
+    "rmse": 1.2493602653553681,
+    "r2": 0.06784394411293704,
+    "similarity_v": 0.9981963028914353,
+    "similarity_y": 0.5039711554971511,
+    "prediction_error": 6.243604290595343
+  },
+  "data_info": {
+    "original_samples": 150000,
+    "sampled_samples": 15000,
+    "features": [
+      "sensor1",
+      "sensor2",
+      "speedSet",
+      "load_value"
+    ],
+    "anomaly_count": 
